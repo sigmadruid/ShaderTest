@@ -1,4 +1,4 @@
-﻿Shader "Unlit/Edge"
+﻿Shader "Custom/Edge"
 {
 	Properties
 	{
@@ -9,7 +9,7 @@
 	}
 	SubShader
 	{
-		Tags { "RenderType"="Opaque" }
+		Tags { "RenderType"="Transparent" }
 		LOD 100
 
         Pass

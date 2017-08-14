@@ -1,11 +1,11 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/VF/NormalMap.shader">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/depth_scan/DepthScan.shader">
     <Files>
-      <File FileName="Assets/VF/SimpleDiffuse.shader" Line="1" Column="1" />
-      <File FileName="../../../../Applications/Unity5.3.4f1/Unity.app/Contents/CGIncludes/UnityCG.cginc" Line="1" Column="1" />
-      <File FileName="Assets/VF/TriPlanar.shader" Line="1" Column="1" />
-      <File FileName="Assets/VF/NormalMap.shader" Line="54" Column="42" />
+      <File FileName="Assets/depth_scan/DepthScan.shader" Line="53" Column="4" />
+      <File FileName="../../../Applications/Unity5.3.4f1/Unity.app/Contents/CGIncludes/UnityCG.cginc" Line="1" Column="1" />
+      <File FileName="../../../Applications/Unity5.3.4f1/Unity.app/Contents/CGIncludes/UnityLightingCommon.cginc" Line="1" Column="1" />
+      <File FileName="Assets/depth_scan/DepthScan.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
