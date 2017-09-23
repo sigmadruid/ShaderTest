@@ -1,4 +1,6 @@
-﻿Shader "VF/BitangentColor"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "VF/BitangentColor"
 {
     Properties
     {
@@ -31,7 +33,7 @@
             v2f vert(appdata v)
             {
                 v2f o;
-                o.vertex = mul(UNITY_MATRIX_MVP, v.pos);
+                o.vertex = UnityObjectToClipPos(v.pos);
 //                float3 bitangent = cross(v.normal, v.tangent.xyz) * v.tangent.w;
                 o.color.rgb = v.normal * 0.5 + 0.5;
                 o.color.a = 1;

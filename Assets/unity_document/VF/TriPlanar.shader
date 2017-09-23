@@ -1,4 +1,6 @@
-﻿Shader "VF/TriPlanar"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "VF/TriPlanar"
 {
 	Properties
 	{
@@ -35,7 +37,7 @@
 			v2f vert (float4 pos : POSITION, float3 normal : NORMAL, float2 uv : TEXCOORD0)
 			{
 				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, pos);
+				o.pos = UnityObjectToClipPos(pos);
                 o.coords = pos.xyz * _Tiling;
                 o.objNormal = normal;
                 o.uv = uv;

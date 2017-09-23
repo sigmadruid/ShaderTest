@@ -1,4 +1,6 @@
-﻿Shader "VF/UVTest"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "VF/UVTest"
 {
 	Properties
 	{
@@ -28,7 +30,7 @@
             v2f vert(appdata v)
             {
                 v2f o;
-                o.pos = mul(UNITY_MATRIX_MVP, v.pos);
+                o.pos = UnityObjectToClipPos(v.pos);
                 o.uv = float4(v.uv.xy, 0, 0);
                 return o;
             }

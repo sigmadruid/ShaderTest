@@ -1,4 +1,6 @@
-﻿Shader "VF/UnlitColor"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "VF/UnlitColor"
 {
     Properties
     {
@@ -22,7 +24,7 @@
 
             float4 vert(appdata v) : SV_POSITION
             {
-                return mul(UNITY_MATRIX_MVP, v.vertex);
+                return UnityObjectToClipPos(v.vertex);
             }
 
             fixed4 frag() : SV_TARGET

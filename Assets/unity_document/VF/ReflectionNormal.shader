@@ -1,4 +1,7 @@
-﻿Shader "VF/ReflectionNormal"
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "VF/ReflectionNormal"
 {
 	Properties
 	{
@@ -25,8 +28,8 @@
             v2f vert(float4 pos : POSITION, float3 normal : NORMAL)
             {
                 v2f o;
-                o.pos = mul(UNITY_MATRIX_MVP, pos);
-                o.worldPos = mul(_Object2World, pos).xyz;
+                o.pos = UnityObjectToClipPos(pos);
+                o.worldPos = mul(unity_ObjectToWorld, pos).xyz;
                 o.worldNormal = UnityObjectToWorldNormal(normal);
                 return o;
             }

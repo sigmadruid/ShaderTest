@@ -1,4 +1,6 @@
-﻿Shader "VF/Checker"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "VF/Checker"
 {
 	Properties
 	{
@@ -33,7 +35,7 @@
 			v2f vert (float4 pos : POSITION, float2 uv : TEXCOORD0)
 			{
 				v2f o;
-				o.vertex = mul(UNITY_MATRIX_MVP, pos);
+				o.vertex = UnityObjectToClipPos(pos);
                 o.uv = uv * _Density;
 				return o;
 			}

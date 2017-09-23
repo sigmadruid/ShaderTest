@@ -1,4 +1,6 @@
-﻿Shader "VF/WorldSpaceNormals"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "VF/WorldSpaceNormals"
 {
 	Properties
 	{
@@ -24,7 +26,7 @@
             v2f vert(float4 vertex : POSITION, half3 normal : NORMAL)
             {
                 v2f o;
-                o.pos = mul(UNITY_MATRIX_MVP, vertex);
+                o.pos = UnityObjectToClipPos(vertex);
 //                o.pos = UnityObjectToClipPos(vertex);
                 o.worldNormal = UnityObjectToWorldNormal(normal);
                 return o;

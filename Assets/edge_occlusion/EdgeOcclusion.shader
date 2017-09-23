@@ -1,4 +1,6 @@
-﻿Shader "Custom/Edge"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Custom/Edge"
 {
 	Properties
 	{
@@ -38,7 +40,7 @@
             v2f vert (appdata_base v)
             {
                 v2f o;
-                o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+                o.pos = UnityObjectToClipPos(v.vertex);
                 o.normal = UnityObjectToWorldNormal(v.normal);
                 o.viewDir = WorldSpaceViewDir(v.vertex);
                 return o;
@@ -68,7 +70,7 @@
 			v2f_img vert (appdata_base v)
 			{
 				v2f_img o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
                 o.uv = v.texcoord;
 				return o;
 			}
