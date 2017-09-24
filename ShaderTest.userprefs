@@ -1,18 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/depth_scan/DepthScan.shader">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\light\HalfLambert.shader">
     <Files>
-      <File FileName="Assets/depth_scan/DepthScan.shader" Line="53" Column="4" />
-      <File FileName="../../../Applications/Unity5.3.4f1/Unity.app/Contents/CGIncludes/UnityCG.cginc" Line="1" Column="1" />
-      <File FileName="../../../Applications/Unity5.3.4f1/Unity.app/Contents/CGIncludes/UnityLightingCommon.cginc" Line="1" Column="1" />
-      <File FileName="Assets/depth_scan/DepthScan.cs" Line="1" Column="1" />
+      <File FileName="Assets\light\Diffuse.shader" Line="55" Column="20" />
+      <File FileName="C:\Program Files\Unity\Editor\Data\CGIncludes\Lighting.cginc" Line="135" Column="1" />
+      <File FileName="C:\Program Files\Unity\Editor\Data\CGIncludes\UnityCG.cginc" Line="168" Column="53" />
+      <File FileName="C:\Program Files\Unity\Editor\Data\CGIncludes\HLSLSupport.cginc" Line="12" Column="36" />
+      <File FileName="C:\Program Files\Unity\Editor\Data\CGIncludes\UnityShaderVariables.cginc" Line="107" Column="31" />
+      <File FileName="Assets\light\HalfLambert.shader" Line="31" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="../../Documents/Firewing/Zombie/client/proj_unity/Assets/Foundation/FileMirror/FileMirrorAccess.cs" line="74" offsetX="444" offsetY="1095" expression="text" liveUpdate="False" />
-    <Watch file="../../Documents/Firewing/Zombie/client/proj_unity/Assets/Foundation/GDSKit/Generated/GDSMgrGenerated.cs" line="1206" offsetX="560" offsetY="18075" expression="parameter_data" liveUpdate="False" />
+    <Watch file="..\..\Documents\Firewing\Zombie\client\proj_unity\Assets\Foundation\FileMirror\FileMirrorAccess.cs" line="74" offsetX="444" offsetY="1095" expression="text" liveUpdate="False" />
+    <Watch file="..\..\Documents\Firewing\Zombie\client\proj_unity\Assets\Foundation\GDSKit\Generated\GDSMgrGenerated.cs" line="1206" offsetX="560" offsetY="18075" expression="parameter_data" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
 </Properties>
