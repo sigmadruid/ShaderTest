@@ -36,8 +36,7 @@
 			{
 				v2f o;
 				o.pos = UnityObjectToClipPos(i.pos);
-				float3 worldNormal = normalize(UnityObjectToWorldNormal(i.normal));
-				o.worldNormal = worldNormal;
+				o.worldNormal = normalize(UnityObjectToWorldNormal(i.normal));
 				return o;
 			}
 

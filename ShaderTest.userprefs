@@ -1,13 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\light\HalfLambert.shader">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\light\PhongSpecular.shader">
     <Files>
-      <File FileName="Assets\light\Diffuse.shader" Line="55" Column="20" />
-      <File FileName="C:\Program Files\Unity\Editor\Data\CGIncludes\Lighting.cginc" Line="135" Column="1" />
-      <File FileName="C:\Program Files\Unity\Editor\Data\CGIncludes\UnityCG.cginc" Line="168" Column="53" />
-      <File FileName="C:\Program Files\Unity\Editor\Data\CGIncludes\HLSLSupport.cginc" Line="12" Column="36" />
-      <File FileName="C:\Program Files\Unity\Editor\Data\CGIncludes\UnityShaderVariables.cginc" Line="107" Column="31" />
-      <File FileName="Assets\light\HalfLambert.shader" Line="31" Column="30" />
+      <File FileName="Assets\light\Diffuse.shader" Line="46" Column="35" />
+      <File FileName="Assets\light\HalfLambert.shader" Line="15" Column="23" />
+      <File FileName="Assets\light\PhongSpecular.shader" Line="43" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

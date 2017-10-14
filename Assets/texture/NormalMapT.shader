@@ -66,7 +66,7 @@
 				fixed3 light = normalize(i.tangentLight);
 				fixed3 view = normalize(i.tangentView);
 
-				fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.rgb;
+				fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.rgb * albedo;
 
 				fixed3 diffuse = _LightColor0.rgb * albedo * ((dot(light, normal)) * 0.5 + 0.5);
 
