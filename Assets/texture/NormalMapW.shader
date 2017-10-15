@@ -2,38 +2,38 @@
 {
 	Properties
 	{
-		_MainTex ("Main Texture", 2D) = "white" {}
-		_MainTint ("Main Tint", Color) = (1,1,1,1)
-		_NormalMap("Normal Map", 2D) = "white" {}
-		_Specular ("Specular", Color) = (1,1,1,1)
-		_Gloss ("Gloss", Range(1, 16)) = 4
+		_MainTint("Main Tint", Color) = (1,1,1,1)
+		_MainTex("Main Tex", 2D) = "white"{}
+		_NormalMap("Normal Map", 2D) = "white"{}
+		_Specular("Specular", Color) = (1,1,1,1)
+		_Gloss("Gloss", Range(1, 16)) = 4
 	}
 	SubShader
 	{
-		Tags { "LightMode"="ForwardBase" }
-		LOD 100
+		Tags{"LightMode" = "ForwardBase"}
 
 		Pass
 		{
+
 			CGPROGRAM
+
 			#pragma vertex vert
 			#pragma fragment frag
-			
+
 			#include "UnityCG.cginc"
 			#include "Lighting.cginc"
 
 			sampler2D _MainTex;
 			float4 _MainTex_ST;
-			fixed4 _MainTint;
 			sampler2D _NormalMap;
 			float4 _NormalMap_ST;
-			fixed4 _Specular;
+			float4 _Specular;
 			float _Gloss;
-			
+
 			struct a2v
 			{
 				float4 pos : POSITION;
-				fixed2 texcoord : TEXCOORD0;
+				float4 texcoord : TEXCOORD0;
 				float3 normal : NORMAL;
 				float4 tangent : TANGENT;
 			};
@@ -51,16 +51,20 @@
 			{
 				v2f o;
 				o.pos = UnityObjectToClipPos(i.pos);
-				o.uv.xy = i.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;
-				o.uv.zw = i.texcoord.xy * _NormalMap_ST.xy + _NormalMap_ST.zw;
-    			float3 worldPos = mul(unity_ObjectToWorld, i.pos).xyz;
-				fixed3 worldNormal = normalize(UnityObjectToWorldNormal(i.normal));
-				fixed3 worldTangent = normalize(UnityObjectToWorldNormal(i.tangent.xyz));
-				fixed3 worldBinormal = normalize(cross(worldNormal, worldTangent) * i.tangent.w);
-				o.T2W0 = float4(worldTangent.x, worldBinormal.x, worldNormal.x, worldPos.x);
-				o.T2W1 = float4(worldTangent.y, worldBinormal.y, worldNormal.y, worldPos.y);
-				o.T2W2 = float4(worldTangent.z, worldBinormal.z, worldNormal.z, worldPos.z);
+				o.uv.xy = TRANSFORM_TEX(i.texcoord, _MainTex);
+				o.uv.zw = TRANSFORM_TEX(i.texcoord, _NormalMap);
+
+				float3 worldPos = mul(unity_ObjectToWorld, i.pos).xyz;
+				float3 worldNormal = normalize(UnityObjectToWorldNormal(i.normal));
+				float3 worldTangent = normalize(UnityObjectToWorldDir(i.tangent.xyz));
+				float3 worldBinormal = normalize(cross(worldNormal, worldTangent) * i.tangent.w);
+
+				o.T2W0 = float4(worldTangent.x, worldTangent.x, worldNormal.x, worldPos.x);
+				o.T2W1 = float4(worldTangent.y, worldTangent.y, worldNormal.y, worldPos.y);
+				o.T2W2 = float4(worldTangent.z, worldTangent.z, worldNormal.z, worldPos.z);
+
 				return o;
+
 			}
 
 			fixed4 frag(v2f i) : SV_TARGET
@@ -74,16 +78,19 @@
 					));
 
 				float3 worldPos = float3(i.T2W0.w, i.T2W1.w, i.T2W2.w);
-				fixed3 worldLight = normalize(UnityWorldSpaceLightDir(worldPos));
+				fixed3 worldLightDir = normalize(UnityWorldSpaceLightDir(worldPos));
 				fixed3 worldViewDir = normalize(UnityWorldSpaceViewDir(worldPos));
-				fixed3 h = normalize(worldLight + worldViewDir);
 
 				fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.rgb * albedo;
-				fixed3 diffuse = _LightColor0.rgb * albedo.rgb * (0.5 * dot(worldNormal, worldLight) + 0.5);
+
+				fixed3 diffuse = _LightColor0.rgb * albedo * (0.5 * dot(worldNormal, worldLightDir) + 0.5);
+
+				fixed3 h = normalize(worldLightDir + worldViewDir);
 				fixed3 specular = _LightColor0.rgb * _Specular.rgb * pow(saturate(dot(h, worldNormal)), _Gloss);
 
-				return fixed4(ambient + diffuse + specular, 0);
+				return fixed4(ambient + diffuse + specular, 1);
 			}
+
 			ENDCG
 		}
 	}
