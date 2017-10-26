@@ -59,9 +59,9 @@
 				float3 worldTangent = normalize(UnityObjectToWorldDir(i.tangent.xyz));
 				float3 worldBinormal = normalize(cross(worldNormal, worldTangent) * i.tangent.w);
 
-				o.T2W0 = float4(worldTangent.x, worldTangent.x, worldNormal.x, worldPos.x);
-				o.T2W1 = float4(worldTangent.y, worldTangent.y, worldNormal.y, worldPos.y);
-				o.T2W2 = float4(worldTangent.z, worldTangent.z, worldNormal.z, worldPos.z);
+				o.T2W0 = float4(worldTangent.x, worldBinormal.x, worldNormal.x, worldPos.x);
+				o.T2W1 = float4(worldTangent.y, worldBinormal.y, worldNormal.y, worldPos.y);
+				o.T2W2 = float4(worldTangent.z, worldBinormal.z, worldNormal.z, worldPos.z);
 
 				return o;
 
