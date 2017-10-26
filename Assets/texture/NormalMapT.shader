@@ -1,4 +1,4 @@
-﻿Shader "Texture/NormalMapT"
+﻿Shader "Sigma/Texture/NormalMapT"
 {
 	Properties
 	{

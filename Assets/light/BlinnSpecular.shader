@@ -1,4 +1,4 @@
-﻿Shader "Light/BlinnSpecular"
+﻿Shader "Sigma/Light/BlinnSpecular"
 {
 	Properties
 	{

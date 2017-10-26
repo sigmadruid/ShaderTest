@@ -1,4 +1,4 @@
-﻿Shader "Light/HalfLambert"
+﻿Shader "Sigma/Light/HalfLambert"
 {
 	Properties
 	{

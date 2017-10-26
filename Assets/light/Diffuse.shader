@@ -1,4 +1,4 @@
-﻿Shader "Light/Diffuse"
+﻿Shader "Sigma/Light/Diffuse"
 {
 	Properties
 	{

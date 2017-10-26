@@ -48,12 +48,14 @@
   <ItemGroup>
      <Compile Include="Assets\depth_scan\DepthScan.cs" />
      <None Include="Assets\texture\NormalMapW.shader" />
+     <None Include="Assets\transparent\AlphaTest.shader" />
      <None Include="Assets\unity_document\VF\VertexColor.shader" />
      <None Include="Assets\unity_document\VF\Reflection.shader" />
      <None Include="Assets\unity_document\VF\ReflectionNormal.shader" />
      <None Include="Assets\texture\NormalMapT.shader" />
      <None Include="Assets\light\BlinnSpecular.shader" />
      <None Include="Assets\unity_document\VF\Checker.shader" />
+     <None Include="Assets\transparent\AlphaBlend.shader" />
      <None Include="Assets\depth_scan\DepthScan.shader" />
      <None Include="Assets\edge_occlusion\EdgeOcclusion.shader" />
      <None Include="Assets\light\Diffuse.shader" />

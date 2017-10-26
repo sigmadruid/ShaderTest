@@ -1,4 +1,4 @@
-﻿Shader "Light/PhongSpecular"
+﻿Shader "Sigma/Light/PhongSpecular"
 {
 	Properties
 	{
