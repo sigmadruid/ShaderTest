@@ -41,7 +41,7 @@
 			struct v2f
 			{
 				float4 pos : SV_POSITION;
-				float4 uv : TEXCOORD0;
+				float2 uv : TEXCOORD0;
 				float3 tLightDir : TEXCOORD1;
 				float3 tViewDir : TEXCOORD2;
 			};
@@ -51,8 +51,7 @@
 				v2f o;
 
 				o.pos = UnityObjectToClipPos(i.pos);
-				o.uv.xy = i.texcoord.xy * _MainTex_ST.xy + _MainTex_ST.zw;
-				o.uv.zw = i.texcoord.xy * _NormalMap_ST.xy + _NormalMap_ST.zw;
+				o.uv = TRANSFORM_TEX(i.texcoord, _MainTex);
 
 				float3 binormal = cross(i.normal, i.tangent.xyz) * i.tangent.w;
 				float3x3 rotation = float3x3(i.tangent.xyz, binormal, i.normal);
@@ -65,8 +64,8 @@
 
 			fixed4 frag(v2f i) : SV_TARGET
 			{
-				fixed3 albedo = tex2D(_MainTex, i.uv.xy) * _MainTint.rgb;
-				fixed3 normal = UnpackNormal(tex2D(_NormalMap, i.uv.zw));
+				fixed3 albedo = tex2D(_MainTex, i.uv) * _MainTint.rgb;
+				fixed3 normal = UnpackNormal(tex2D(_NormalMap, i.uv));
 
 				fixed3 lightDir = normalize(i.tLightDir);
 				fixed3 viewDir = normalize(i.tViewDir);
