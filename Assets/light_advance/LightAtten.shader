@@ -90,8 +90,6 @@ Shader "Sigma/LightAdvance/LightAtten"
 			fixed4 _MainTint;
 			sampler2D _MainTex;
 			fixed4 _MainTex_ST;
-			fixed4 _Specular;
-			float _Gloss;
 
 			struct a2v
 			{
@@ -118,7 +116,6 @@ Shader "Sigma/LightAdvance/LightAtten"
 				o.worldNormal = normalize(UnityObjectToWorldNormal(i.normal));
 				o.worldPos = mul(unity_ObjectToWorld, i.pos);
 				o.worldLight = normalize(UnityWorldSpaceLightDir(o.worldPos));
-				o.worldView = normalize(UnityWorldSpaceViewDir(o.worldPos));
 				return o;
 			}
 
@@ -126,15 +123,13 @@ Shader "Sigma/LightAdvance/LightAtten"
 			{
 				fixed3 albedo = tex2D(_MainTex, i.uv).rgb * _MainTint;
 				fixed3 diffuse = _LightColor0.rgb * albedo * (0.5 * dot(i.worldNormal, i.worldLight) + 0.5);
-				fixed3 halfDir = normalize(i.worldView + i.worldLight);
-				fixed3 specular = _LightColor0.rgb * _Specular.rgb * (pow(saturate(dot(i.worldNormal, halfDir)), _Gloss));
 				#ifdef USING_DIRECTIONAL_LIGHT
 					fixed atten = 1.0;
 				#else
 					float lightCoord = mul(unity_WorldToLight, float4(i.worldPos, 1)).xyz;
 					fixed atten = tex2D(_LightTexture0, dot(lightCoord, lightCoord).rr).UNITY_ATTEN_CHANNEL;
 				#endif
-				return fixed4((diffuse + specular) * atten,1);
+				return fixed4(diffuse * atten, 1);
 			}
 
 			ENDCG
