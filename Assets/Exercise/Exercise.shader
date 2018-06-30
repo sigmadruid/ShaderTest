@@ -95,7 +95,7 @@
 
 				UNITY_LIGHT_ATTENUATION(atten, i, worldPos);
 
-				return fixed4(ambient + lerp(diffuse, refl, _ReflectFactor) * atten + specular, 1);
+				return fixed4(ambient + (lerp(diffuse, refl, _ReflectFactor) + specular) * atten, 1);
 			}
 
 
