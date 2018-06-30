@@ -49,11 +49,14 @@
      <Compile Include="Assets\depth_scan\DepthScan.cs" />
      <Compile Include="Assets\post_effect\BasePostEffect.cs" />
      <Compile Include="Assets\post_effect\Brightness_Saturation_Contrast.cs" />
+     <Compile Include="Assets\post_effect\EdgeDetect.cs" />
+     <Compile Include="Assets\post_effect\GaussianBlur.cs" />
      <None Include="Assets\texture\NormalMapW.shader" />
      <None Include="Assets\light_advance\LightAtten.shader" />
      <None Include="Assets\transparent\AlphaTest.shader" />
      <None Include="Assets\unity_document\VF\VertexColor.shader" />
      <None Include="Assets\post_effect\Brightness_Saturation_Contrast.shader" />
+     <None Include="Assets\post_effect\EdgeDetect.shader" />
      <None Include="Assets\unity_document\VF\Reflection.shader" />
      <None Include="Assets\unity_document\VF\ReflectionNormal.shader" />
      <None Include="Assets\texture\NormalMapT.shader" />
@@ -66,6 +69,7 @@
      <None Include="Assets\light\Diffuse.shader" />
      <None Include="Assets\unity_document\VF\TriPlanar.shader" />
      <None Include="Assets\unity_document\VF\NormalMap.shader" />
+     <None Include="Assets\post_effect\GaussianBlur.shader" />
      <None Include="Assets\unity_document\SimpleGlass.shader" />
      <None Include="Assets\unity_document\VF\UnlitColor.shader" />
      <None Include="Assets\texture_advance\CubemapReflect.shader" />
