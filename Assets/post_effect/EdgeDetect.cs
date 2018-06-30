@@ -12,12 +12,13 @@ public class EdgeDetect : BasePostEffect
 
     public Color backgroundColor = Color.white;
 
-    protected override void OnRender()
+    void OnRenderImage(RenderTexture src, RenderTexture dest)
     {
         material.SetFloat("_EdgeOnly", edgeOnly);
         material.SetFloat("_EdgeThreshold", edgeThreshold);
         material.SetColor("_EdgeColor", edgeColor);
         material.SetColor("_BackgroundColor", backgroundColor);
+        Graphics.Blit(src, dest, material);
     }
 }
 

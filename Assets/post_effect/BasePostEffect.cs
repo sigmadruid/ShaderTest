@@ -8,16 +8,11 @@ public class BasePostEffect : MonoBehaviour
 {
     public Shader shader;
 
-    void OnRenderImage(RenderTexture src, RenderTexture dest)
+    void Start()
     {
-        if (CheckSupport() && CheckResrouce())
+        if (!CheckSupport() || !CheckResrouce())
         {
-            OnRender();
-            Graphics.Blit(src, dest, material);
-        }
-        else
-        {
-            Graphics.Blit(src, dest);
+            Debug.LogError("can't use post effect");
         }
     }
 
@@ -45,7 +40,4 @@ public class BasePostEffect : MonoBehaviour
         }
     }
 
-    protected virtual void OnRender()
-    {
-    }
 }
