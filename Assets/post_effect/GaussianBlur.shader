@@ -9,6 +9,7 @@
 	{
 		Pass
 		{
+			NAME "GAUSSIAN_BLUR_VERTICAL"
 			ZWrite Off
 			ZTest Always
 			Cull Off
@@ -23,6 +24,7 @@
 
 		Pass
 		{
+			NAME "GAUSSIAN_BLUR_HORIZONTAL"
 			ZWrite Off
 			ZTest Always
 			Cull Off
