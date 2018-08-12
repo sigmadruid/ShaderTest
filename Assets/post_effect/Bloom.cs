@@ -27,10 +27,9 @@ public class Bloom : BasePostEffect
 
         Graphics.Blit(src, buffer0, material, 0);
 
+        material.SetFloat("_BlurSize", 1 + blurSpread);
         for(int i = 0; i < iteration; ++i)
         {
-            material.SetFloat("_BlurSize", 1 + blurSpread);
-
             RenderTexture buffer1 = RenderTexture.GetTemporary(rtW, rtH, 0);
 
             Graphics.Blit(buffer0, buffer1, material, 1);
