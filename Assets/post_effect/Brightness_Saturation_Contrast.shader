@@ -1,4 +1,4 @@
-﻿Shader "Sigma/PostEffectBrightness_Saturation_Contrast" 
+﻿Shader "Sigma/PostEffect/Brightness_Saturation_Contrast" 
 {
 	Properties 
 	{

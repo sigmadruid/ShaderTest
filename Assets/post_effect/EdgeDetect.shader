@@ -1,4 +1,4 @@
-﻿Shader "Sigma/PostEffectEdgeDetect" 
+﻿Shader "Sigma/PostEffect/EdgeDetect" 
 {
 	Properties 
 	{

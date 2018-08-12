@@ -1,4 +1,4 @@
-﻿Shader "Bloom" 
+﻿Shader "Sigma/PostEffect/Bloom" 
 {
 	Properties 
 	{
@@ -85,6 +85,7 @@
 			if (_MainTex_TexelSize.y < 0)
 				o.uv.w = 1 - o.uv.w;
 			#endif 
+			return o;
 		}
 		fixed4 fragBloom(v2fBloom i) : SV_TARGET
 		{
