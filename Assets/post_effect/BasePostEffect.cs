@@ -8,12 +8,16 @@ public class BasePostEffect : MonoBehaviour
 {
     public Shader shader;
 
+    protected Camera _camera;
+
     void Start()
     {
         if (!CheckSupport() || !CheckResrouce())
         {
             Debug.LogError("can't use post effect");
         }
+        _camera = GetComponent<Camera>();
+        OnStart();
     }
 
     protected bool CheckSupport()
@@ -38,6 +42,10 @@ public class BasePostEffect : MonoBehaviour
             }
             return mat;
         }
+    }
+
+    protected virtual void OnStart()
+    {
     }
 
 }
