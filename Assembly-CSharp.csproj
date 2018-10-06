@@ -67,6 +67,7 @@
      <None Include="Assets\texture\NormalMapT.shader" />
      <None Include="Assets\light\BlinnSpecular.shader" />
      <None Include="Assets\unity_document\VF\Checker.shader" />
+     <None Include="Assets\non_photorealistic_rendering\Toon.shader" />
      <None Include="Assets\texture_advance\CubemapRefract.shader" />
      <None Include="Assets\transparent\AlphaBlend.shader" />
      <None Include="Assets\depth_scan\DepthScan.shader" />
