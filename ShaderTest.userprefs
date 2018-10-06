@@ -1,11 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\light_advance\LightShadow.shader">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\Unity_Shaders_Book-master\Unity_Shaders_Book-master\Assets\Scripts\Chapter13\EdgeDetectNormalsAndDepth.cs">
     <Files>
-      <File FileName="Assets\light_advance\LightShadow.shader" Line="83" Column="32" />
-      <File FileName="..\Unity_Shaders_Book-master\Unity_Shaders_Book-master\Assets\Shaders\Common\BumpedDiffuse.shader" Line="116" Column="6" />
-      <File FileName="C:\Program Files\Unity\Editor\Data\CGIncludes\AutoLight.cginc" Line="9" Column="33" />
-      <File FileName="C:\Program Files\Unity\Editor\Data\CGIncludes\UnityShadowLibrary.cginc" Line="98" Column="42" />
+      <File FileName="Assets\post_effect\EdgeDetectWithDepthNormal.cs" Line="16" Column="16" />
+      <File FileName="Assets\post_effect\EdgeDetectWithDepthNormal.shader" Line="60" Column="56" />
+      <File FileName="Assets\post_effect\HeightFog.cs" Line="11" Column="1" />
+      <File FileName="C:\Program Files\Unity\Editor\Data\CGIncludes\UnityCG.cginc" Line="592" Column="27" />
+      <File FileName="..\Unity_Shaders_Book-master\Unity_Shaders_Book-master\Assets\Shaders\Chapter13\Chapter13-EdgeDetectNormalAndDepth.shader" Line="17" Column="19" />
+      <File FileName="..\Unity_Shaders_Book-master\Unity_Shaders_Book-master\Assets\Scripts\Chapter13\EdgeDetectNormalsAndDepth.cs" Line="24" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

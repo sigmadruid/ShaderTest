@@ -8,10 +8,8 @@ public class HeightFog : BasePostEffect
     public float FogHeightBottom;
     public float FogDensity;
 
-    protected override void OnStart()
+    void OnEnalbe()
     {
-        base.OnStart();
-
         _camera.depthTextureMode = DepthTextureMode.Depth;
     }
 
